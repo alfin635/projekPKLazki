@@ -1,0 +1,1 @@
+<?php require_once '../includes/auth.php';require_once '../config/koneksi.php';$id=(int)($_GET['id']??0);$st=$conn->prepare('DELETE FROM guru WHERE id_guru=?');$st->bind_param('i',$id);$st->execute();header('Location: index.php');exit;?>

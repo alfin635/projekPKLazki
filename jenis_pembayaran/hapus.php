@@ -1,0 +1,1 @@
+<?php require_once '../includes/auth.php';require_once '../config/koneksi.php';$id=(int)($_GET['id']??0);$st=$conn->prepare('DELETE FROM jenis_pembayaran WHERE id_jenis=?');$st->bind_param('i',$id);try{$st->execute();}catch(Throwable $e){}header('Location: index.php');exit;?>

@@ -1,0 +1,1 @@
+<?php require_once '../includes/auth.php';require_once '../config/koneksi.php';$id=(int)($_GET['id']??0);$st=$conn->prepare('DELETE FROM siswa WHERE id_siswa=?');$st->bind_param('i',$id);try{$st->execute();}catch(mysqli_sql_exception $e){}header('Location: index.php');exit;?>
